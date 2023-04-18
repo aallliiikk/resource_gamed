@@ -1,0 +1,101 @@
+.mines-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.mines {
+  flex: 1 0 21%;
+}
+
+.mines .mine-card {
+  position: relative;
+  flex: 1 1 200px;
+  padding: 1rem;
+  background: rgba(4, 0, 20, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mines .disabled {
+  filter: grayscale(100%);
+}
+
+/* .mines .indicator { */
+/*   position: absolute; */
+/*   top: 1rem; */
+/*   left: 1rem; */
+/*   width: 10px; */
+/*   height: 10px; */
+/*   background-color: limegreen; */
+/*   border-radius: 50%; */
+/*   box-shadow: 0 0 5px limegreen; */
+/* } */
+
+button {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.mines .progress {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  /* background-color: #f3f3f3; */
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.mines .progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #007bff;
+}
+
+.mines .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  box-shadow: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.mines .indicator.active {
+  background-color: lime;
+  box-shadow: 0 0 5px lime;
+}
+
+.mine-bar {
+  margin: 0.2rem;
+}
+
+.mines .mine-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 10px;
+  font-size: 12px;
+}

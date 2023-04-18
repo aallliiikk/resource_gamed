@@ -1,0 +1,37 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 10rem;
+  /* box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24); */
+}
+
+/* .sidenav.closed { */
+/*   width: 1rem; */
+/* } */
+
+/* mat-toolbar { */
+/*   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24); */
+/* } */
+
+.main-content {
+  padding: 1rem;
+}
+
+.sidenav-container.closed .main-content {
+  margin-left: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.sidenav.closed .nav-item {
+  display: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

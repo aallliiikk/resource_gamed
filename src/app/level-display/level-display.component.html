@@ -1,0 +1,15 @@
+<div class="level-display">
+    <div>Coins: {{ dataService.coins }}</div>
+  <div class="level-div">
+    <div>Level: {{ dataService.level }}</div>
+  </div>
+  <!-- <div *ngFor="let mine of dataService.inventory | keyvalue"> -->
+  <!--   {{ mine.key }}: {{ mine.value }} -->
+  <!-- </div> -->
+  <mat-progress-bar
+    class="bar"
+    mode="determinate"
+    [value]="getLevelProgress()"
+  ></mat-progress-bar>
+</div>
+

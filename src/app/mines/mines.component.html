@@ -1,0 +1,20 @@
+<div class="mines-container">
+<div class="mines" *ngFor="let mine of mines" [ngClass]="{'disabled': dataService.level < mine.requiredLevel}">
+  <div class="mine-card">
+  <div class="mine">
+    <div class="indicator" [ngClass]="{'active': mine.mining}"></div>
+    <h4>{{mine.name}}</h4>
+      <span class="spacer"></span>
+        <div class="mine-info">
+    <p>Value: {{mine.value}}</p>
+    <p>Required Level: {{mine.requiredLevel}}</p>
+        </div>
+  </div>
+  <button (click)="startMining(mine)" [disabled]="dataService.level < mine.requiredLevel">
+    {{mine.mining ? 'Stop Mining' : 'Start Mining'}}
+  </button>
+  <!-- <mat-progress-bar class="mine-bar" mode="determinate" [value]="miningProgress(mine)"></mat-progress-bar> -->
+</div>
+</div>
+</div>
+

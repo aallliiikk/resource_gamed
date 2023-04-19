@@ -28,10 +28,10 @@ startMining(mine: any): void {
   if (this.dataService.level >= mine.requiredLevel) {
     mine.mining = !mine.mining;
 
-    if (mine.mining) {
+    while (mine.mining) {
       setTimeout(() => {
-        mine.mining = false;
-        mine.progress = 100;
+        // mine.mining = false;
+        // mine.progress = 100;
         this.dataService.inventory[mine.name as keyof typeof this.dataService.inventory] += 1;
         this.gainExperience(mine.experience);
       }, mine.miningTime);

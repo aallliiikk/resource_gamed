@@ -1,1 +1,10 @@
-<p>inventory works!</p>
+<div class="inventory-container">
+  <ng-container *ngFor="let material of dataService.getMaterialList()">
+    <div class="material-box" *ngIf="dataService.inventory[material] > 0">
+      <!-- <img [src]="'assets/icons/' + material + '.png'" [alt]="material + ' icon'" /> -->
+      <span>{{ material }}</span>
+      <span>{{ dataService.inventory[material] }}</span>
+    </div>
+  </ng-container>
+</div>
+

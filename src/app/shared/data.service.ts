@@ -23,5 +23,8 @@ export class DataService {
     // Example formula: experience = level^2 * 100
     return Math.pow(level, 2) * 100;
   }
+  getMaterialList(): string[] {
+  return Object.keys(this.inventory);
+}
 }
 

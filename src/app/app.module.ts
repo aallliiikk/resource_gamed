@@ -18,6 +18,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LevelDisplayComponent } from './level-display/level-display.component';
 import { MinesComponent } from './mines/mines.component';
 import { DataService } from './shared/data.service';
+import { FloatingNumberComponent } from './floating-number/floating-number.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DataService } from './shared/data.service';
     MiningComponent,
     LevelDisplayComponent,
     MinesComponent,
+    FloatingNumberComponent,
   ],
   imports: [
     BrowserModule,

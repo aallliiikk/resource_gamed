@@ -10,9 +10,12 @@
     <p>Required Level: {{mine.requiredLevel}}</p>
         </div>
   </div>
-  <button (click)="startMining(mine)" [disabled]="dataService.level < mine.requiredLevel">
-    {{mine.mining ? 'Stop Mining' : 'Start Mining'}}
-  </button>
+  <!-- <button (click)="startMining(mine)" [disabled]="dataService.level < mine.requiredLevel"> -->
+  <!--   {{mine.mining ? 'Stop Mining' : 'Start Mining'}} -->
+  <!-- </button> -->
+      <button (click)="toggleMining(mine)" [disabled]="dataService.level < mine.requiredLevel">{{ mine.mining ? 'Stop Mining' : 'Start Mining' }}</button>
+
+      <app-floating-number *ngIf="showFloatingNumber[mine.name]" [number]="1"></app-floating-number>
   <!-- <mat-progress-bar class="mine-bar" mode="determinate" [value]="miningProgress(mine)"></mat-progress-bar> -->
 </div>
 </div>

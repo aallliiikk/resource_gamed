@@ -24,14 +24,14 @@ export class MinesComponent {
 
 
 
-startMining(mine: any): void {
+mineResource(mine: any): void {
   if (this.dataService.level >= mine.requiredLevel) {
-    mine.mining = !mine.mining;
+    // mine.mining = !mine.mining;
 
-    while (mine.mining) {
+    if (mine.mining) {
       setTimeout(() => {
         // mine.mining = false;
-        // mine.progress = 100;
+        mine.progress = 100;
         this.dataService.inventory[mine.name as keyof typeof this.dataService.inventory] += 1;
         this.gainExperience(mine.experience);
       }, mine.miningTime);
@@ -48,5 +48,24 @@ gainExperience(exp: number): void {
   miningProgress(mine: any): number {
     return mine.progress;
   }
+
+  mining: Record<string, boolean> = {};
+showFloatingNumber: Record<string, boolean> = {};
+
+toggleMining(mine: any): void {
+  if (mine.mining) {
+    clearInterval(mine.miningTime);
+    mine.mining = false;
+  } else {
+    mine.mining = true;
+    mine.miningTime = setInterval(() => {
+      this.mineResource(mine);
+      this.showFloatingNumber[mine.name] = true;
+      setTimeout(() => {
+        this.showFloatingNumber[mine.name] = false;
+      }, 1000);
+    }, mine.miningTime);
+  }
+}
 }
 

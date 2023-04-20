@@ -1,0 +1,12 @@
+.floating-number {
+  position: absolute;
+  font-size: 1.2rem;
+  color: green;
+  font-weight: bold;
+  right: 0;
+  top: 0;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  text-shadow: 0 0 4px green;
+}
+

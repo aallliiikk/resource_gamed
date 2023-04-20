@@ -98,4 +98,5 @@ button:disabled {
   right: 0;
   line-height: 10px;
   font-size: 12px;
+  padding: 1rem;
 }
